@@ -1,6 +1,8 @@
 package com.jk.apps.forex_trading.service.entity;
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "trade_line")
 public class TradeLine extends BaseEntity {

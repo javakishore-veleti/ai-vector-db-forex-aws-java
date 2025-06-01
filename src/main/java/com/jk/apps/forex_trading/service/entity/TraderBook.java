@@ -1,7 +1,9 @@
 package com.jk.apps.forex_trading.service.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "trader_book")
 public class TraderBook {

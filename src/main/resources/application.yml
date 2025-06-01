@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:forex_db  # In-memory database (Change to `jdbc:h2:file:./data/forex_db` for file-based storage)
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""  # Default H2 password (leave empty)
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 10000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update  # Options: `create`, `update`, `validate`, `none`
+    show-sql: true
+    format-sql: true
+
+  h2:
+    console:
+      enabled: true  # Enables H2 Web Console
+      path: /h2-console  # URL: http://localhost:8080/h2-console
+      settings:
+        web-allow-others: true  # Allow remote connections (optional)
+
+server:
+  port: 8080  # Define the application port
+  servlet:
+    context-path: /forex-api  # Set the root API path
