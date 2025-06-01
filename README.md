@@ -1,4 +1,4 @@
-# AI-Powered Vector Database for FOREX Trade Processing (`ai-vector-db-forex-aws-java`)
+# AI-Powered Vector Database "Based" FOREX Trade Processing (`ai-vector-db-forex-aws-java`)
 
 ## Introduction
 This project provides an **AI-powered FOREX trade event processing system**. 
