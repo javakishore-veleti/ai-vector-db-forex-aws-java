@@ -1,7 +1,11 @@
 # AI-Powered Vector Database for FOREX Trade Processing (`ai-vector-db-forex-aws-java`)
 
 ## Introduction
-This project provides an **AI-powered FOREX trade event processing system**, leveraging **Java/Spring Boot**, **vector databases**, and **AWS AI services** for **real-time market intelligence, trade risk analysis, and anomaly detection**. It integrates **Retrieval-Augmented Generation (RAG)** using **AWS Bedrock**, enabling dynamic insights from historical trade data.
+This project provides an **AI-powered FOREX trade event processing system**. 
+
+This project levarges **Java/Spring Boot**, **vector databases**, and **AWS AI services** for **real-time market intelligence, trade risk analysis, and anomaly detection**. 
+
+This project integrates **Retrieval-Augmented Generation (RAG)** using **AWS Bedrock**, enabling dynamic insights from historical trade data.
 
 ## Objective
 - Store, retrieve, and analyze **FOREX trade transactions**.
