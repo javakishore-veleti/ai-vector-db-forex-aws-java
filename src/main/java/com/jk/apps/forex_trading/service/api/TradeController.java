@@ -2,9 +2,11 @@ package com.jk.apps.forex_trading.service.api;
 
 import com.jk.apps.forex_trading.service.entity.Trade;
 import com.jk.apps.forex_trading.service.services.TradeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Trade Event Processing", description = "APIs for managing trade events")
 @RestController
 @RequestMapping("/api/trades")
 public class TradeController {

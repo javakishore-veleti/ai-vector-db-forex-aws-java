@@ -27,5 +27,12 @@ spring:
 
 server:
   port: 8080  # Define the application port
-  servlet:
-    context-path: /forex-api  # Set the root API path
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha

@@ -1,0 +1,93 @@
+{
+  "customers_list": ["Google", "Microsoft", "AWS", "LinkedIn"],
+
+  "customers_ceos_list": {
+    "Google": {
+      "USD": "Sundar Pichai",
+      "INR": "Sanjay Gupta",
+      "GBP": "Ruth Porat",
+      "JPY": "Hiroshi Lockheimer",
+      "CNY": "Scott Beaumont",
+      "CAD": "John Doe",
+      "AUD": "Lisa Arnold",
+      "NZD": "Mike Callahan",
+      "CHF": "Jean Dupont",
+      "SGD": "Hiroshi Tanaka",
+      "MXN": "Carlos Gutierrez",
+      "ZAR": "Themba Mokoena",
+      "CNH": "Xu Xiang",
+      "TRY": "Mehmet Yılmaz",
+      "ILS": "Eli Cohen",
+      "PLN": "Jakub Kowalski",
+      "CZK": "Pavel Novak",
+      "HUF": "Laszlo Horvath"
+    },
+    "Microsoft": {
+      "USD": "Satya Nadella",
+      "INR": "Anant Maheshwari",
+      "GBP": "Clare Barclay",
+      "JPY": "Takuya Hirano",
+      "CNY": "Alain Crozier",
+      "CAD": "David Brown",
+      "AUD": "Stefan Weitz",
+      "NZD": "Laurent Schlosser",
+      "CHF": "Steven Worrall",
+      "SGD": "Derek Chen",
+      "MXN": "Fernando López",
+      "ZAR": "Sipho Nkosi",
+      "CNH": "Zhang Wei",
+      "TRY": "Ahmet Demir",
+      "ILS": "David Levi",
+      "PLN": "Piotr Zielinski",
+      "CZK": "Radek Svoboda",
+      "HUF": "Gábor Farkas"
+    },
+    "AWS": {
+      "USD": "Andy Jassy",
+      "INR": "Puneet Chandok",
+      "GBP": "Darren Hardman",
+      "JPY": "Adam Selipsky",
+      "CNY": "Alex Yung",
+      "CAD": "Greg Pearson",
+      "AUD": "Mark Schwartz",
+      "NZD": "Patrick Schmidt",
+      "CHF": "Sarah Edge",
+      "SGD": "Vincent Tan",
+      "MXN": "Javier Torres",
+      "ZAR": "Neo Mahlangu",
+      "CNH": "Li Ming",
+      "TRY": "Osman Kaya",
+      "ILS": "Shlomi Ben-David",
+      "PLN": "Bartek Nowak",
+      "CZK": "Josef Dvorak",
+      "HUF": "István Székely"
+    },
+    "LinkedIn": {
+      "USD": "Ryan Roslansky",
+      "INR": "Ashutosh Gupta",
+      "GBP": "Josh Graff",
+      "JPY": "Takeshi Yamaguchi",
+      "CNY": "Lu Jian",
+      "CAD": "Melanie Drouin",
+      "AUD": "Mario Beckenbauer",
+      "NZD": "Vincent Martin",
+      "CHF": "Dan Shapero",
+      "SGD": "Liam Cheng",
+      "MXN": "Gabriel Mendoza",
+      "ZAR": "Zanele Khumalo",
+      "CNH": "Chen Lin",
+      "TRY": "Fatih Yildiz",
+      "ILS": "Moshe Feldman",
+      "PLN": "Marek Kaczmarek",
+      "CZK": "Lukáš Procházka",
+      "HUF": "Zoltán Molnár"
+    }
+  },
+
+  "companies_countries_list": {
+    "Google": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],
+    "Microsoft": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],
+    "AWS": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],
+    "LinkedIn": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"]
+  }
+}

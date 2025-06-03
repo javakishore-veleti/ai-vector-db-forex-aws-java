@@ -1,0 +1,37 @@
+[
+  {
+    "customer_id": "423e4567-e89b-12d3-a456-556642440000",
+    "first_name": "Emily",
+    "last_name": "Johnson",
+    "email": "emily.johnson@example.com",
+    "customer_type": "Retail"
+  },
+  {
+    "customer_id": "423e4567-e89b-12d3-a456-556642440001",
+    "first_name": "Raj",
+    "last_name": "Patel",
+    "email": "raj.patel@example.com",
+    "customer_type": "Retail"
+  },
+  {
+    "customer_id": "423e4567-e89b-12d3-a456-556642440002",
+    "first_name": "Oliver",
+    "last_name": "Brown",
+    "email": "oliver.brown@example.com",
+    "customer_type": "Retail"
+  },
+  {
+    "customer_id": "423e4567-e89b-12d3-a456-556642440003",
+    "first_name": "Yuki",
+    "last_name": "Takahashi",
+    "email": "yuki.takahashi@example.com",
+    "customer_type": "Retail"
+  },
+  {
+    "customer_id": "423e4567-e89b-12d3-a456-556642440004",
+    "first_name": "Chen",
+    "last_name": "Wang",
+    "email": "chen.wang@example.com",
+    "customer_type": "Retail"
+  }
+]
