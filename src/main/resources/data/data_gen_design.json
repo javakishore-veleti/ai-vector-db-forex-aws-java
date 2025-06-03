@@ -1,13 +1,13 @@
 {
-  "customers_list": ["Google", "Microsoft", "AWS", "LinkedIn"],
+  "customersList": ["Google", "Microsoft", "AWS", "LinkedIn"],
 
-  "customers_ceos_list": {
+  "customersCeosList": {
     "Google": {
-      "USD": "Sundar Pichai",
-      "INR": "Sanjay Gupta",
-      "GBP": "Ruth Porat",
-      "JPY": "Hiroshi Lockheimer",
-      "CNY": "Scott Beaumont",
+      "USA": "Sundar Pichai",
+      "India": "Sanjay Gupta",
+      "UK": "Ruth Porat",
+      "Japan": "Hiroshi Lockheimer",
+      "China": "Scott Beaumont",
       "CAD": "John Doe",
       "AUD": "Lisa Arnold",
       "NZD": "Mike Callahan",
@@ -23,11 +23,11 @@
       "HUF": "Laszlo Horvath"
     },
     "Microsoft": {
-      "USD": "Satya Nadella",
-      "INR": "Anant Maheshwari",
-      "GBP": "Clare Barclay",
-      "JPY": "Takuya Hirano",
-      "CNY": "Alain Crozier",
+      "USA": "Satya Nadella",
+      "India": "Anant Maheshwari",
+      "UK": "Clare Barclay",
+      "Japan": "Takuya Hirano",
+      "China": "Alain Crozier",
       "CAD": "David Brown",
       "AUD": "Stefan Weitz",
       "NZD": "Laurent Schlosser",
@@ -43,11 +43,11 @@
       "HUF": "Gábor Farkas"
     },
     "AWS": {
-      "USD": "Andy Jassy",
-      "INR": "Puneet Chandok",
-      "GBP": "Darren Hardman",
-      "JPY": "Adam Selipsky",
-      "CNY": "Alex Yung",
+      "USA": "Andy Jassy",
+      "India": "Puneet Chandok",
+      "UK": "Darren Hardman",
+      "Japan": "Adam Selipsky",
+      "China": "Alex Yung",
       "CAD": "Greg Pearson",
       "AUD": "Mark Schwartz",
       "NZD": "Patrick Schmidt",
@@ -63,11 +63,11 @@
       "HUF": "István Székely"
     },
     "LinkedIn": {
-      "USD": "Ryan Roslansky",
-      "INR": "Ashutosh Gupta",
-      "GBP": "Josh Graff",
-      "JPY": "Takeshi Yamaguchi",
-      "CNY": "Lu Jian",
+      "USA": "Ryan Roslansky",
+      "India": "Ashutosh Gupta",
+      "UK": "Josh Graff",
+      "Japan": "Takeshi Yamaguchi",
+      "China": "Lu Jian",
       "CAD": "Melanie Drouin",
       "AUD": "Mario Beckenbauer",
       "NZD": "Vincent Martin",
@@ -84,7 +84,7 @@
     }
   },
 
-  "companies_countries_list": {
+  "companiesCountriesList": {
     "Google": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],
     "Microsoft": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],
     "AWS": ["USA", "India", "UK", "Japan", "China", "Canada", "Australia", "New Zealand", "Switzerland", "Singapore", "Mexico", "South Africa", "Hong Kong", "Turkey", "Israel", "Poland", "Czech Republic", "Hungary"],

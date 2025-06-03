@@ -2,9 +2,9 @@ package com.jk.apps.forex_trading.service.services.impl;
 
 import com.jk.apps.forex_trading.service.dto.DataGenDesignDTO;
 import com.jk.apps.forex_trading.service.services.CustomersJsonGenWF;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,8 @@ public class CustomersJsonGenWFImpl implements CustomersJsonGenWF {
     @Override
     public String generateCustomersJson(String customerType) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        DataGenDesignDTO designData = objectMapper.readValue(new File("src/main/resources/data_gen_design.json"), DataGenDesignDTO.class);
+        ClassPathResource resource = new ClassPathResource("data/data_gen_design.json");
+        DataGenDesignDTO designData = objectMapper.readValue(resource.getInputStream(), DataGenDesignDTO.class);
 
         Map<String, Object> customerData = new HashMap<>();
         if ("Corporate".equalsIgnoreCase(customerType)) {

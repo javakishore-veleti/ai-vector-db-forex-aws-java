@@ -1,37 +1,57 @@
 package com.jk.apps.forex_trading.service.services.impl.task;
 
-import com.github.javafaker.Faker;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jk.apps.forex_trading.service.dto.CustomersJsonWrapper;
 import com.jk.apps.forex_trading.service.dto.DataSetupCtx;
 import com.jk.apps.forex_trading.service.entity.Customer;
 import com.jk.apps.forex_trading.service.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 @Component
 public class CustomerSetupTask {
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerSetupTask.class);
 
-    private final Faker faker = new Faker();
+    private final CustomerRepository customerRepository;
+    private final ObjectMapper objectMapper;
 
-    public void createCustomers(DataSetupCtx ctx) {
+    public CustomerSetupTask(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+        this.objectMapper = new ObjectMapper();
+    }
+
+    public void createCustomers(DataSetupCtx ctx, String customerType) throws IOException {
         if (!ctx.getCustomerIds().isEmpty()) return;
 
-        List<Customer> customers = IntStream.rangeClosed(1, 10).mapToObj(i -> {
-            Customer customer = new Customer();
-            String id = UUID.randomUUID().toString();
-            customer.setId(id);
-            customer.setFirstName(faker.name().firstName());
-            customer.setLastName(faker.name().lastName());
-            customer.setEmail(faker.internet().emailAddress());
-            ctx.getCustomerIds().add(id);
-            return customer;
-        }).toList();
+        String fileName = "data/customers_corporates.json";
+        if("Corporates".equals(customerType)) {
+            fileName = "data/customers_corporates.json";
+        } else {
+            fileName = "data/customers_retail.json";
+        }
+
+        ClassPathResource resource = new ClassPathResource("data/customers_corporates.json");
+        CustomersJsonWrapper customersWrapper = objectMapper.readValue(resource.getInputStream(), CustomersJsonWrapper.class);
+        List<Customer> customers = customersWrapper.getCustomers();
+
+        // Filter out customers whose IDs already exist in the database
+        List<Customer> newCustomers = customers.stream()
+                .filter(customer -> !customerRepository.existsById(customer.getId()))
+                .collect(Collectors.toList());
+
+        if (!newCustomers.isEmpty()) {
+            customerRepository.saveAll(newCustomers);
+            LOGGER.info("Saved " + newCustomers.size() + " new customers.");
+        } else {
+            LOGGER.info("No new customers to save.");
+        }
 
         customerRepository.saveAll(customers);
     }

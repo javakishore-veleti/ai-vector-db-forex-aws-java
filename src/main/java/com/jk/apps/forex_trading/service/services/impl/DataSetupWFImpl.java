@@ -7,14 +7,20 @@ import com.jk.apps.forex_trading.service.services.impl.task.TraderSetupTask;
 import com.jk.apps.forex_trading.service.services.impl.task.TradeBookSetupTask;
 import com.jk.apps.forex_trading.service.services.impl.task.TradeSetupTask;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
 @Service
 @Slf4j
 public class DataSetupWFImpl implements DataSetupWF {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DataSetupWFImpl.class);
 
     private final CustomerSetupTask customerSetupTask;
     private final TraderSetupTask traderSetupTask;
@@ -32,25 +38,31 @@ public class DataSetupWFImpl implements DataSetupWF {
     }
 
     @Override
-    public void runDataSetupWorkflow() {
+    public void runDataSetupWorkflow() throws Exception {
         DataSetupCtx dataSetupCtx = new DataSetupCtx(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
         CompletableFuture<Void> customerFuture = CompletableFuture.runAsync(() -> {
-            customerSetupTask.createCustomers(dataSetupCtx);
-            log.info("Customer setup completed.");
+            for (String s : Arrays.asList("Corporate", "Retail")) {
+                try {
+                    customerSetupTask.createCustomers(dataSetupCtx, s);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            LOGGER.info("Customer setup completed.");
         });
 
         CompletableFuture<Void> traderFuture = CompletableFuture.runAsync(() -> {
             traderSetupTask.createTraders(dataSetupCtx);
-            log.info("Trader setup completed.");
+            LOGGER.info("Trader setup completed.");
             tradeBookSetupTask.createTradeBooks(dataSetupCtx);
-            log.info("TradeBook setup completed.");
+            LOGGER.info("TradeBook setup completed.");
         });
 
         tradeSetupTask.createTrades(dataSetupCtx);
 
         // Wait for all tasks to complete before finishing workflow execution
         CompletableFuture.allOf(customerFuture, traderFuture).join();
-        log.info("Data Setup Workflow execution completed.");
+        LOGGER.info("Data Setup Workflow execution completed.");
     }
 }
